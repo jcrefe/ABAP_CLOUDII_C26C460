@@ -4,11 +4,19 @@ CLASS zcl_jcrf_lab_06_elements DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
+    CONSTANTS:
+      gc_constant_01 TYPE string VALUE 'CLASS',
+      gc_constant_02 TYPE string VALUE 'INSTANCE',
+      gc_constant_03 TYPE string VALUE 'REFERENCE',
+      gc_constant_04 TYPE string VALUE 'ABAP'.
+
     TYPES: BEGIN OF ty_elem_objects,
              class     TYPE string,
              instance  TYPE string,
              reference TYPE string,
            END OF ty_elem_objects.
+
+    DATA ms_object TYPE ty_elem_objects.
 
     METHODS:
       set_object IMPORTING iv_class     TYPE string
@@ -19,7 +27,7 @@ CLASS zcl_jcrf_lab_06_elements DEFINITION
 
   PROTECTED SECTION.
   PRIVATE SECTION.
-    DATA ms_object TYPE ty_elem_objects.
+
 ENDCLASS.
 
 CLASS zcl_jcrf_lab_06_elements IMPLEMENTATION.
