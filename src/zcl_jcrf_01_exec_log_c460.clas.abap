@@ -17,12 +17,40 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-    DATA(lo_inst) = NEW zcl_jcrf_lab_09_account(  ).
 
-    lo_inst->set_iban( 'ES12312345645465' ).
+*Constructors
 
-    out->write( lo_inst->get_iban( ) ).
+    DATA(lo_const_her) = NEW zcl_jcrf_07_inh_con_2_log_c460(
+      iv_view_type = 'VIEW01'
+      iv_box       = 'BOX01' ).
 
+**   Heritance
+*
+*    DATA(lo_heritance) = NEW zcl_jcrf_05_inherit_2_log_c460(  ).
+*
+*    out->write( lo_heritance->get_architecture(  ) ).
+
+*    DATA(lo_inst) = NEW zcl_jcrf_03_instances_log_c460( ).
+*
+*    out->write( zcl_jcrf_03_instances_log_c460=>log ).
+*
+*    DATA(lo_inst2) = NEW zcl_jcrf_03_instances_log_c460( ).
+*
+*    out->write( zcl_jcrf_03_instances_log_c460=>log ).
+
+*    DATA(lo_inst) = NEW zcl_jcrf_02_basics_log_c460(  ).
+*
+*    out->write( lo_inst->get_flight( 'AA' ) ).
+*
+*    out->write( | { zcl_jcrf_02_basics_log_c460=>c_1 } | ).
+*
+*    out->write( | { zcl_jcrf_02_basics_log_c460=>c_logali-name }-{ zcl_jcrf_02_basics_log_c460=>c_logali-master }-{ zcl_jcrf_02_basics_log_c460=>c_logali-group } | ).
+
+*    DATA(lo_inst) = NEW zcl_jcrf_lab_09_account(  ).
+*
+*    lo_inst->set_iban( 'ES12312345645465' ).
+*
+*    out->write( lo_inst->get_iban( ) ).
 
 *    zcl_jcrf_lab_08_work_record=>open_new_record(
 *      iv_date       = '19880726'
