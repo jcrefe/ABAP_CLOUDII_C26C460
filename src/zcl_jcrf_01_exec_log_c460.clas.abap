@@ -18,11 +18,32 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
 
-*Constructors
+    DATA(lo_animal) = NEW zcl_jcrf_10_narrowing_log_c460(  ).
+    DATA(lo_lion) = NEW zcl_jcrf_11_widening_log_c460(  ).
 
-    DATA(lo_const_her) = NEW zcl_jcrf_07_inh_con_2_log_c460(
-      iv_view_type = 'VIEW01'
-      iv_box       = 'BOX01' ).
+    out->write( lo_animal->walk( ) ).
+    out->write( lo_lion->walk(  ) ).
+
+    "lo_animal = lo_lion.
+    out->write( 'Narrowing cast' ).
+    out->write( lo_animal->walk( ) ).
+    out->write( lo_lion->walk(  ) ).
+
+    TRY.
+        lo_lion ?= lo_animal.
+      CATCH cx_sy_move_cast_error.
+        out->write( 'Casting error' ).
+        RETURN.
+    ENDTRY.
+
+    out->write( 'Widening cast' ).
+    out->write( lo_animal->walk( ) ).
+    out->write( lo_lion->walk(  ) ).
+
+*Constructors
+*    DATA(lo_const_her) = NEW zcl_jcrf_07_inh_con_2_log_c460(
+*      iv_view_type = 'VIEW01'
+*      iv_box       = 'BOX01' ).
 
 **   Heritance
 *
