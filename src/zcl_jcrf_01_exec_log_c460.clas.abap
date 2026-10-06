@@ -17,28 +17,54 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*Polymorphism
+    DATA: gt_airplanes   TYPE STANDARD TABLE OF REF TO zcl_jcrf_19_polymor_log_c460,
+          lo_airplane    TYPE REF TO zcl_jcrf_19_polymor_log_c460,
+          lo_cargo_plane TYPE REF TO zcl_jcrf_20_cargo_pla_log_c460,
+          lo_pass_plane  TYPE REF TO zcl_jcrf_21_pass_plan_log_c460.
 
-    DATA(lo_animal) = NEW zcl_jcrf_10_narrowing_log_c460(  ).
-    DATA(lo_lion) = NEW zcl_jcrf_11_widening_log_c460(  ).
+    lo_cargo_plane = NEW #( ). "CREATE OBJECT lo_cargo_plane
+    APPEND lo_cargo_plane TO gt_airplanes.
 
-    out->write( lo_animal->walk( ) ).
-    out->write( lo_lion->walk(  ) ).
+    lo_pass_plane = NEW #( ).
+    APPEND lo_pass_plane TO gt_airplanes.
 
-    "lo_animal = lo_lion.
-    out->write( 'Narrowing cast' ).
-    out->write( lo_animal->walk( ) ).
-    out->write( lo_lion->walk(  ) ).
+    LOOP AT gt_airplanes INTO lo_airplane.
+      out->write( lo_airplane->airplane_type(  ) ).
+    ENDLOOP.
 
-    TRY.
-        lo_lion ?= lo_animal.
-      CATCH cx_sy_move_cast_error.
-        out->write( 'Casting error' ).
-        RETURN.
-    ENDTRY.
 
-    out->write( 'Widening cast' ).
-    out->write( lo_animal->walk( ) ).
-    out->write( lo_lion->walk(  ) ).
+*data(lo_interf) = new zcl_jcrf_15_interface_log_c460(  ).
+*
+*lo_interf->zif_jcrf_03_log_c460~get_airports(
+*  EXPORTING
+*    iv_airport_id =
+**  RECEIVING
+**    rs_airport    =
+*).
+
+* Instance enc.
+*    DATA(lo_animal) = NEW zcl_jcrf_10_narrowing_log_c460(  ).
+*    DATA(lo_lion) = NEW zcl_jcrf_11_widening_log_c460(  ).
+*
+*    out->write( lo_animal->walk( ) ).
+*    out->write( lo_lion->walk(  ) ).
+*
+*    "lo_animal = lo_lion.
+*    out->write( 'Narrowing cast' ).
+*    out->write( lo_animal->walk( ) ).
+*    out->write( lo_lion->walk(  ) ).
+*
+*    TRY.
+*        lo_lion ?= lo_animal.
+*      CATCH cx_sy_move_cast_error.
+*        out->write( 'Casting error' ).
+*        RETURN.
+*    ENDTRY.
+*
+*    out->write( 'Widening cast' ).
+*    out->write( lo_animal->walk( ) ).
+*    out->write( lo_lion->walk(  ) ).
 
 *Constructors
 *    DATA(lo_const_her) = NEW zcl_jcrf_07_inh_con_2_log_c460(

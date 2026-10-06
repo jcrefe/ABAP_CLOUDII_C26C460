@@ -1,0 +1,18 @@
+CLASS zcl_jcrf_19_polymor_log_c460 DEFINITION ABSTRACT
+  PUBLIC
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    METHODS:
+      airplane_type ABSTRACT
+        RETURNING VALUE(rv_airplane_type) TYPE String.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_jcrf_19_polymor_log_c460 IMPLEMENTATION.
+ENDCLASS.

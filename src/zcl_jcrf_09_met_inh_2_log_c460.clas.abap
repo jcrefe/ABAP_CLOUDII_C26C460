@@ -7,6 +7,7 @@ CLASS zcl_jcrf_09_met_inh_2_log_c460 DEFINITION INHERITING FROM zcl_jcrf_08_meth
 
     METHODS:
       set_name REDEFINITION.
+*      set_meth REDEFINITION.
 
   PROTECTED SECTION.
   PRIVATE SECTION.

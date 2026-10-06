@@ -40,7 +40,11 @@ CLASS zcl_jcrf_02_basics_log_c460 DEFINITION
       get_flights
         IMPORTING iv_carrier        TYPE string
                   iv_conn_id        TYPE string OPTIONAL
-        RETURNING VALUE(rt_flights) TYPE tt_flight.
+        RETURNING VALUE(rt_flights) TYPE tt_flight,
+
+        my_attr
+        IMPORTING private_attr type string
+        RETURNING VALUE(r_private_attr) type string.
 
     "Static components
     CLASS-DATA: name2 TYPE string.
@@ -105,6 +109,14 @@ CLASS zcl_jcrf_02_basics_log_c460 IMPLEMENTATION.
 *     WHERE carrier_id EQ @iv_carrier
 *      INTO table @rt_flights.
     ENDIF.
+  ENDMETHOD.
+
+  METHOD my_attr.
+
+    me->private_attr = private_attr.
+
+    r_private_attr = me->private_attr.
+
   ENDMETHOD.
 
 ENDCLASS.

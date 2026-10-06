@@ -13,7 +13,9 @@ CLASS zcl_jcrf_08_meth_inh_log_c460 DEFINITION
     METHODS:
       set_name
         IMPORTING
-          is_name TYPE ty_name.
+          is_name TYPE ty_name,
+
+      set_meth FINAL.
 
   PROTECTED SECTION.
   PRIVATE SECTION.
@@ -24,6 +26,10 @@ ENDCLASS.
 CLASS zcl_jcrf_08_meth_inh_log_c460 IMPLEMENTATION.
   METHOD set_name.
     APPEND is_name TO gt_name.
+  ENDMETHOD.
+
+  METHOD set_meth.
+
   ENDMETHOD.
 
 ENDCLASS.
