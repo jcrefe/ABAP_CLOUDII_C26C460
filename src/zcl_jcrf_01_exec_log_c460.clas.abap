@@ -17,22 +17,84 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*References
+
+    DATA: lo_vat_ind_1 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
+          lo_vat_ind_2 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
+          lo_vat_ind_3 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460.
+
+    lo_vat_ind_1 = NEW #(  ).
+*    lo_vat_ind_2 = NEW #(  ).
+*    lo_vat_ind_3 = NEW #(  ).
+
+    lo_vat_ind_2 = lo_vat_ind_1.
+    lo_vat_ind_3 = lo_vat_ind_1.
+
+    lo_vat_ind_1->vat_ind = 'A1'.
+    lo_vat_ind_2->vat_ind = 'A2'.
+    lo_vat_ind_3->vat_ind = 'A3'.
+
+    out->write( lo_vat_ind_1->vat_ind ).
+    out->write( lo_vat_ind_2->vat_ind ).
+    out->write( lo_vat_ind_3->vat_ind ).
+
+*Composition
+
+*    DATA(lo_keyboard) = NEW zcl_jcrf_27_keyboard_log_c460(  ).
+*    DATA(lo_laptop) = NEW zcl_jcrf_28_laptop_log_c460( lo_keyboard ).
+*
+*    lo_keyboard->keyboard_type = 'ES'.
+*
+*    out->write( lo_laptop->keyboard->keyboard_type ).
+
+*Association
+
+*    DATA(lo_credit_card) = NEW zcl_jcrf_25_cred_card_log_c460(  ).
+*    DATA(lo_client) = NEW zcl_jcrf_26_client_log_c460(  ).
+*
+*    lo_credit_card->set_card_num( '9999 8888 7777 5555' ).
+*    lo_client->set_credit_card( lo_credit_card ).
+*
+*    out->write( lo_client->get_credit_card(  )->get_card_num(  ) ).
+
+*Polymorphism with interfaces
+
+*    DATA: gt_companies TYPE STANDARD TABLE OF REF TO zif_jcrf_04_log_c460,
+*          lo_company   TYPE REF TO zif_jcrf_04_log_c460,
+*          lo_comp_eu   TYPE REF TO zcl_jcrf_22_polym_int_log_c460,
+*          lo_comp_usa  TYPE REF TO zcl_jcrf_23_pol_int_2_log_c460,
+*          lo_plant     TYPE REF TO zcl_jcrf_24_plant_log_c460.
+*
+*    lo_comp_eu = NEW #( ).
+*    APPEND lo_comp_eu TO gt_companies.
+*
+*    lo_comp_usa = NEW #( ).
+*    APPEND lo_comp_usa TO gt_companies.
+*
+*    lo_plant = NEW #( ).
+*
+*    LOOP AT gt_companies INTO lo_company.
+*
+*      out->write( lo_company->define_company(  ) ).
+*      out->write( lo_plant->assign_company( lo_company ) ).
+*
+*    ENDLOOP.
+
 *Polymorphism
-    DATA: gt_airplanes   TYPE STANDARD TABLE OF REF TO zcl_jcrf_19_polymor_log_c460,
-          lo_airplane    TYPE REF TO zcl_jcrf_19_polymor_log_c460,
-          lo_cargo_plane TYPE REF TO zcl_jcrf_20_cargo_pla_log_c460,
-          lo_pass_plane  TYPE REF TO zcl_jcrf_21_pass_plan_log_c460.
-
-    lo_cargo_plane = NEW #( ). "CREATE OBJECT lo_cargo_plane
-    APPEND lo_cargo_plane TO gt_airplanes.
-
-    lo_pass_plane = NEW #( ).
-    APPEND lo_pass_plane TO gt_airplanes.
-
-    LOOP AT gt_airplanes INTO lo_airplane.
-      out->write( lo_airplane->airplane_type(  ) ).
-    ENDLOOP.
-
+*    DATA: gt_airplanes   TYPE STANDARD TABLE OF REF TO zcl_jcrf_19_polymor_log_c460,
+*          lo_airplane    TYPE REF TO zcl_jcrf_19_polymor_log_c460,
+*          lo_cargo_plane TYPE REF TO zcl_jcrf_20_cargo_pla_log_c460,
+*          lo_pass_plane  TYPE REF TO zcl_jcrf_21_pass_plan_log_c460.
+*
+*    lo_cargo_plane = NEW #( ). "CREATE OBJECT lo_cargo_plane
+*    APPEND lo_cargo_plane TO gt_airplanes.
+*
+*    lo_pass_plane = NEW #( ).
+*    APPEND lo_pass_plane TO gt_airplanes.
+*
+*    LOOP AT gt_airplanes INTO lo_airplane.
+*      out->write( lo_airplane->airplane_type(  ) ).
+*    ENDLOOP.
 
 *data(lo_interf) = new zcl_jcrf_15_interface_log_c460(  ).
 *
