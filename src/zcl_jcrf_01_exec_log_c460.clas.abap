@@ -17,26 +17,87 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*Exceptions
+
+    DATA(lo_exept) = NEW zcl_jcrf_35_mana_auth_log_c460(  ).
+
+    TRY.
+        lo_exept->check_user( sy-uname ).
+      CATCH zcx_jcrf_01_auth_log_c460.
+*      CATCH cx_root INTO DATA(lx_ex).
+*        out->write( lx_ex->get_text( ) ).
+        out->write( 'Exception Handled' ).
+    ENDTRY.
+
+*Events with interfaces
+
+*    DATA(lo_central_bank) = NEW zcl_jcrf_33_bank_log_c460(  ).
+*    DATA(lo_client_bank) = NEW zcl_jcrf_34_client_ac_log_c460(  ).
+*
+*    SET HANDLER lo_client_bank->on_new_transfer FOR lo_central_bank ACTIVATION abap_true.
+*
+*    DO 5 TIMES.
+*      WAIT UP TO 1 SECONDS.
+*      out->write( lo_central_bank->create_notification(  ) ).
+*      out->write( lo_client_bank->notification ).
+*      IF sy-index EQ 3.
+*        SET HANDLER lo_client_bank->on_new_transfer FOR lo_central_bank ACTIVATION abap_false.
+*        lo_client_bank->notification = 'No handler for Event new transfer'.
+*      ENDIF.
+*    ENDDO.
+
+*    DATA(lo_timer) = NEW zcl_jcrf_31_timer_log_c460(  ).
+*    DATA(lo_conexion) = NEW zcl_jcrf_32_conexion_log_c460(  ).
+*
+*    SET HANDLER lo_conexion->on_time_out FOR lo_timer.
+*
+*    DO.
+*      WAIT UP TO 1 SECONDS.
+*      lo_timer->increment_counter( 1 ).
+*
+*      IF lo_conexion->hour IS INITIAL.
+*        out->write( |Event not yet executed: { cl_abap_context_info=>get_system_time(  ) }| ).
+*      ELSE.
+*        out->write( |Event was raised at: { lo_conexion->hour }-{ lo_conexion->sender_user }| ).
+*        EXIT.
+*      ENDIF.
+*
+*    ENDDO.
+
+*Generic class Object
+
+*    DATA: lo_object TYPE REF TO object.
+*
+*    lo_object = NEW zcl_jcrf_30_product_log_c460(  ).
+*
+*    DATA(lv_method_name) = 'RETURN_CATEGORY'.
+*
+*    DATA lv_category TYPE string.
+*
+*    CALL METHOD lo_object->(lv_method_name) RECEIVING rv_category = lv_category.
+*
+*    out->write( lv_category ).
+
 *References
 
-    DATA: lo_vat_ind_1 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
-          lo_vat_ind_2 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
-          lo_vat_ind_3 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460.
-
-    lo_vat_ind_1 = NEW #(  ).
-*    lo_vat_ind_2 = NEW #(  ).
-*    lo_vat_ind_3 = NEW #(  ).
-
-    lo_vat_ind_2 = lo_vat_ind_1.
-    lo_vat_ind_3 = lo_vat_ind_1.
-
-    lo_vat_ind_1->vat_ind = 'A1'.
-    lo_vat_ind_2->vat_ind = 'A2'.
-    lo_vat_ind_3->vat_ind = 'A3'.
-
-    out->write( lo_vat_ind_1->vat_ind ).
-    out->write( lo_vat_ind_2->vat_ind ).
-    out->write( lo_vat_ind_3->vat_ind ).
+*    DATA: lo_vat_ind_1 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
+*          lo_vat_ind_2 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460,
+*          lo_vat_ind_3 TYPE REF TO zcl_jcrf_29_vat_ind_log_c460.
+*
+*    lo_vat_ind_1 = NEW #(  ).
+**    lo_vat_ind_2 = NEW #(  ).
+**    lo_vat_ind_3 = NEW #(  ).
+*
+*    lo_vat_ind_2 = lo_vat_ind_1.
+*    lo_vat_ind_3 = lo_vat_ind_1.
+*
+*    lo_vat_ind_1->vat_ind = 'A1'.
+*    lo_vat_ind_2->vat_ind = 'A2'.
+*    lo_vat_ind_3->vat_ind = 'A3'.
+*
+*    out->write( lo_vat_ind_1->vat_ind ).
+*    out->write( lo_vat_ind_2->vat_ind ).
+*    out->write( lo_vat_ind_3->vat_ind ).
 
 *Composition
 
