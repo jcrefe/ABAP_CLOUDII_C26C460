@@ -17,17 +17,52 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-*Exceptions
+*Design Patterns
 
-    DATA(lo_exept) = NEW zcl_jcrf_35_mana_auth_log_c460(  ).
+*Singleton
 
-    TRY.
-        lo_exept->check_user( sy-uname ).
-      CATCH zcx_jcrf_01_auth_log_c460.
-*      CATCH cx_root INTO DATA(lx_ex).
-*        out->write( lx_ex->get_text( ) ).
-        out->write( 'Exception Handled' ).
-    ENDTRY.
+    DATA: lo_sing_1 TYPE REF TO zcl_jcrf_37_singleton_log_c460,
+          lo_sing_2 TYPE REF TO zcl_jcrf_37_singleton_log_c460.
+
+    lo_sing_1 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
+    WAIT UP TO 2 SECONDS.
+    lo_sing_2 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
+
+    out->write( lo_sing_1->time ).
+    out->write( lo_sing_1->time ).
+
+    DATA(lo_inst) = NEW zcl_jcrf_37_singleton_log_c460(  ).
+
+**Exceptions
+*
+*    DATA(lo_exept) = NEW zcl_jcrf_35_mana_auth_log_c460(  ).
+*
+*    DATA: lx_excep TYPE REF TO zcx_jcrf_01_auth_log_c460.
+*
+*    DATA: lv_result TYPE i,
+*          lv_num1   TYPE i VALUE 10,
+*          lv_num2   TYPE i.
+*
+*    TRY.
+*
+*        lv_result = lv_num1 / lv_num2.
+*
+*        lo_exept->check_user( sy-uname ).
+*      CATCH zcx_jcrf_01_auth_log_c460 INTO lx_excep.
+**      CATCH cx_root INTO DATA(lx_ex).
+**        out->write( lx_ex->get_text( ) ).
+**        out->write( 'Exception Handled' ).
+*        out->write( lx_excep->get_text( ) ).
+*
+*      CATCH cx_sy_zerodivide INTO DATA(lx_zero).
+*        out->write( lx_zero->get_text( ) ).
+*
+*        lv_num2 = 2.
+*
+*        RETRY.
+*    ENDTRY.
+*
+*    out->write( lv_result ).
 
 *Events with interfaces
 
