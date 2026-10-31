@@ -17,21 +17,71 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*Observer
+
+    DATA(lo_processes) = NEW zcl_jcrf_45_processes_log_c460(  ).
+    DATA(lo_sales) = NEW zcl_jcrf_47_sales_dep_log_c460(  ).
+    DATA(lo_billing) = NEW zcl_jcrf_48_bill_dep_log_c460(  ).
+
+    SET HANDLER lo_sales->on_modified_state FOR lo_processes.
+    SET HANDLER lo_billing->on_modified_state FOR lo_processes.
+
+    "Set new state
+    lo_processes->set_state( 'NewSales 01 - Product 9999 - iPhone 17 sold' ).
+
+    out->write( lo_processes->get_state(  ) ).
+
+    out->write( lo_sales->state ).
+    out->write( lo_billing->state ).
+
+*Model-View-Controller
+
+*    DATA: lv_name TYPE string VALUE 'Juan Lopez',
+*          lv_role TYPE string VALUE 'Sr. Developer'.
+*
+*    DATA(lo_model) = NEW zcl_jcrf_42_model_log_c460(
+*      iv_name = lv_name
+*      iv_role = lv_role ).
+*
+*    DATA(lo_view) = NEW zcl_jcrf_43_view_log_c460(  ).
+*
+*    DATA(lo_controller) = NEW zcl_jcrf_44_control_log_c460(  ).
+*
+*    lo_controller->set_model( lo_model ).
+*
+*    lo_controller->set_view( lo_view ).
+*
+*    lo_controller->get_view( )->display_employee(
+*      iv_name = lo_model->get_name( )
+*      iv_role = lo_model->get_role(  )
+*      io_out  = out ).
+
+*Factory Method
+
+*    DATA: lo_shape   TYPE REF TO zif_jcrf_06_log_c460,
+*          lo_factory TYPE REF TO zcl_jcrf_41_factory_log_c460.
+*
+*    lo_factory = NEW #(  ).
+*
+*    lo_shape = lo_factory->get_shape( 'Triangle' ).
+*
+*    out->write( lo_shape->draw_shape(  ) ).
+
 *Design Patterns
 
 *Singleton
 
-    DATA: lo_sing_1 TYPE REF TO zcl_jcrf_37_singleton_log_c460,
-          lo_sing_2 TYPE REF TO zcl_jcrf_37_singleton_log_c460.
-
-    lo_sing_1 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
-    WAIT UP TO 2 SECONDS.
-    lo_sing_2 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
-
-    out->write( lo_sing_1->time ).
-    out->write( lo_sing_1->time ).
-
-    DATA(lo_inst) = NEW zcl_jcrf_37_singleton_log_c460(  ).
+*    DATA: lo_sing_1 TYPE REF TO zcl_jcrf_37_singleton_log_c460,
+*          lo_sing_2 TYPE REF TO zcl_jcrf_37_singleton_log_c460.
+*
+*    lo_sing_1 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
+*    WAIT UP TO 2 SECONDS.
+*    lo_sing_2 = zcl_jcrf_37_singleton_log_c460=>get_instance(  ).
+*
+*    out->write( lo_sing_1->time ).
+*    out->write( lo_sing_1->time ).
+*
+*    DATA(lo_inst) = NEW zcl_jcrf_37_singleton_log_c460(  ).
 
 **Exceptions
 *
