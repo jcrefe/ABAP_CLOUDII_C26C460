@@ -17,22 +17,33 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*   Factorial
+    DATA(lo_fact) = NEW zcl_jcrf_49_bus_proc_log_c460(  ).
+
+    lo_fact->get_factorial(
+      EXPORTING
+        iv_number    = 4
+      IMPORTING
+        ev_factorial = DATA(lv_factorial) ).
+
+    out->write( lv_factorial ).
+
 *Observer
-
-    DATA(lo_processes) = NEW zcl_jcrf_45_processes_log_c460(  ).
-    DATA(lo_sales) = NEW zcl_jcrf_47_sales_dep_log_c460(  ).
-    DATA(lo_billing) = NEW zcl_jcrf_48_bill_dep_log_c460(  ).
-
-    SET HANDLER lo_sales->on_modified_state FOR lo_processes.
-    SET HANDLER lo_billing->on_modified_state FOR lo_processes.
-
-    "Set new state
-    lo_processes->set_state( 'NewSales 01 - Product 9999 - iPhone 17 sold' ).
-
-    out->write( lo_processes->get_state(  ) ).
-
-    out->write( lo_sales->state ).
-    out->write( lo_billing->state ).
+*
+*    DATA(lo_processes) = NEW zcl_jcrf_45_processes_log_c460(  ).
+*    DATA(lo_sales) = NEW zcl_jcrf_47_sales_dep_log_c460(  ).
+*    DATA(lo_billing) = NEW zcl_jcrf_48_bill_dep_log_c460(  ).
+*
+*    SET HANDLER lo_sales->on_modified_state FOR lo_processes.
+*    SET HANDLER lo_billing->on_modified_state FOR lo_processes.
+*
+*    "Set new state
+*    lo_processes->set_state( 'NewSales 01 - Product 9999 - iPhone 17 sold' ).
+*
+*    out->write( lo_processes->get_state(  ) ).
+*
+*    out->write( lo_sales->state ).
+*    out->write( lo_billing->state ).
 
 *Model-View-Controller
 
