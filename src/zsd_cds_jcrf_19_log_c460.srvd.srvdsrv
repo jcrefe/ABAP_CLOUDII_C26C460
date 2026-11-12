@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD Custom Entity'
+define service Zsd_cds_jcrf_19_log_c460 {
+  expose zcds_jcrf_19_log_c460 as Travel;
+}

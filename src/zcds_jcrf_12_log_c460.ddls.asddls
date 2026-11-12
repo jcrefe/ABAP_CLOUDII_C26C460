@@ -11,7 +11,7 @@ define view entity zcds_jcrf_12_log_c460
   association [1..1] to zcds_jcrf_11_log_c460 as _Agency on _Agency.AgencyId = $projection.AgencyId
 
 {
-  key Travel.travel_id                                     as TravelId,
-      Travel.agency_id                                     as AgencyId,
-      _Agency(pCountryCode: $parameters.pCountryCode).Name as AgencyName
+  key Travel.travel_id                                                       as TravelId,
+      Travel.agency_id                                                       as AgencyId,
+      _Agency(pCountryCode: $parameters.pCountryCode)[City = 'Atlanta'].Name as AgencyName
 }
