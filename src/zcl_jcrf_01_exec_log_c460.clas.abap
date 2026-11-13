@@ -17,16 +17,18 @@ CLASS zcl_jcrf_01_exec_log_c460 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-*   Factorial
-    DATA(lo_fact) = NEW zcl_jcrf_49_bus_proc_log_c460(  ).
+    DATA lt_abstract TYPE STANDARD TABLE OF zcds_jcrf_20_log_c460.
 
-    lo_fact->get_factorial(
-      EXPORTING
-        iv_number    = 4
-      IMPORTING
-        ev_factorial = DATA(lv_factorial) ).
-
-    out->write( lv_factorial ).
+**   Factorial
+*    DATA(lo_fact) = NEW zcl_jcrf_49_bus_proc_log_c460(  ).
+*
+*    lo_fact->get_factorial(
+*      EXPORTING
+*        iv_number    = 4
+*      IMPORTING
+*        ev_factorial = DATA(lv_factorial) ).
+*
+*    out->write( lv_factorial ).
 
 *Observer
 *
