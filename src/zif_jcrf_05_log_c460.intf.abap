@@ -1,8 +1,4 @@
-INTERFACE zif_jcrf_05_log_c460
-  PUBLIC .
+interface ZIF_JCRF_05_LOG_C460
+  public .
 
-  EVENTS new_transfer.
-
-  CONSTANTS: office TYPE string VALUE 'Madrid'.
-
-ENDINTERFACE.
+endinterface.

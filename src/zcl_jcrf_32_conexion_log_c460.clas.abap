@@ -1,26 +1,13 @@
-CLASS zcl_jcrf_32_conexion_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_32_CONEXION_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA: hour TYPE zsyst_uzeit,
-          sender_user type string.
-
-    METHODS:
-      on_time_out FOR EVENT time_out OF zcl_jcrf_31_timer_log_c460
-        IMPORTING ev_hour
-                  sender.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_32_conexion_log_c460 IMPLEMENTATION.
 
-  METHOD on_time_out.
-    me->hour = ev_hour.
-    me->sender_user = sender->user.
-  ENDMETHOD.
 
+CLASS ZCL_JCRF_32_CONEXION_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

@@ -1,17 +1,13 @@
-CLASS zcl_jcrf_12_friends_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PRIVATE "PROTECTED "PUBLIC
-  GLOBAL FRIENDS zcl_jcrf_13_friends_log_c460.
+class ZCL_JCRF_12_FRIENDS_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-  PROTECTED SECTION.
-    DATA: protected_attr TYPE string.
-  PRIVATE SECTION.
-    DATA: private_attr TYPE string.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_12_friends_log_c460 IMPLEMENTATION.
+CLASS ZCL_JCRF_12_FRIENDS_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

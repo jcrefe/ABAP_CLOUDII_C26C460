@@ -1,32 +1,13 @@
-CLASS zcl_jcrf_45_processes_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_45_PROCESSES_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      set_state IMPORTING iv_state TYPE string,
-      get_state RETURNING VALUE(rv_state) TYPE string.
-
-    EVENTS modified_state EXPORTING VALUE(ev_new_state) TYPE string.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-
-    DATA: current_state TYPE string.
-
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_45_processes_log_c460 IMPLEMENTATION.
-  METHOD get_state.
-    rv_state = me->current_state.
-  ENDMETHOD.
-
-  METHOD set_state.
-    me->current_state = iv_state.
-    RAISE EVENT modified_state EXPORTING ev_new_state = me->current_state.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_45_PROCESSES_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

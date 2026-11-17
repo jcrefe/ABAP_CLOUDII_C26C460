@@ -1,6 +1,4 @@
-INTERFACE zif_jcrf_06_log_c460
-  PUBLIC .
+interface ZIF_JCRF_06_LOG_C460
+  public .
 
-  METHODS: draw_shape RETURNING VALUE(rv_shape) TYPE string.
-
-ENDINTERFACE.
+endinterface.

@@ -1,27 +1,13 @@
-CLASS zcl_jcrf_03_instances_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_03_INSTANCES_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    CLASS-DATA: log TYPE string.
-
-    METHODS: constructor.
-
-    CLASS-METHODS class_constructor.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_03_instances_log_c460 IMPLEMENTATION.
-  METHOD class_constructor.
-    log = | { log } - Static Constructor--> |.
-  ENDMETHOD.
 
-  METHOD constructor.
-     log = | { log } - Instance Constructor--> |.
-  ENDMETHOD.
 
+CLASS ZCL_JCRF_03_INSTANCES_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

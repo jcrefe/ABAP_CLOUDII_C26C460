@@ -1,15 +1,4 @@
-INTERFACE zif_jcrf_02_log_c460
-  PUBLIC .
+interface ZIF_JCRF_02_LOG_C460
+  public .
 
-  TYPES: BEGIN OF ty_cust_addr,
-           fist_name TYPE string,
-           last_name TYPE string,
-         END OF ty_cust_addr.
-
-  METHODS:
-    get_customer
-      IMPORTING
-                iv_cust_id             TYPE string
-      RETURNING VALUE(rs_cust_address) TYPE ty_cust_addr.
-
-ENDINTERFACE.
+endinterface.

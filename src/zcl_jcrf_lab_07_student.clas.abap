@@ -1,23 +1,13 @@
-CLASS zcl_jcrf_lab_07_student DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_LAB_07_STUDENT definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA birth_date TYPE zdate READ-ONLY.
-
-    METHODS:
-      set_birth_date IMPORTING iv_birth_date TYPE zdate.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_lab_07_student IMPLEMENTATION.
-  METHOD set_birth_date.
-    birth_date = iv_birth_date.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_LAB_07_STUDENT IMPLEMENTATION.
 ENDCLASS.

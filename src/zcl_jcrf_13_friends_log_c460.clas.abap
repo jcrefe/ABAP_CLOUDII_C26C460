@@ -1,24 +1,13 @@
-CLASS zcl_jcrf_13_friends_log_c460 DEFINITION
-  PUBLIC
+class ZCL_JCRF_13_FRIENDS_LOG_C460 definition
+  public
+  create private .
 
-  CREATE PUBLIC .
-
-  PUBLIC SECTION.
-    METHODS:
-      get_friend_data.
-  PROTECTED SECTION.
-    DATA: father_attr TYPE string.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_13_friends_log_c460 IMPLEMENTATION.
-  METHOD get_friend_data.
-    DATA(lo_friend) = NEW zcl_jcrf_12_friends_log_c460(  ).
-
-    lo_friend->private_attr = 'private'.
-    lo_friend->protected_attr = 'protected'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_13_FRIENDS_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

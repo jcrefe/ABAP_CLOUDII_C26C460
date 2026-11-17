@@ -1,42 +1,13 @@
-CLASS zcl_jcrf_44_control_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_44_CONTROL_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      set_model IMPORTING io_model TYPE REF TO zcl_jcrf_42_model_log_c460,
-      get_model RETURNING VALUE(ro_model) TYPE REF TO zcl_jcrf_42_model_log_c460,
-
-      set_view IMPORTING io_view TYPE REF TO zcl_jcrf_43_view_log_c460,
-      get_view RETURNING VALUE(ro_view) TYPE REF TO zcl_jcrf_43_view_log_c460.
-
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-
-    DATA: model TYPE REF TO zcl_jcrf_42_model_log_c460,
-          view  TYPE REF TO zcl_jcrf_43_view_log_c460.
-
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_44_control_log_c460 IMPLEMENTATION.
-  METHOD get_model.
-    ro_model = me->model.
-  ENDMETHOD.
-
-  METHOD get_view.
-    ro_view = me->view.
-  ENDMETHOD.
-
-  METHOD set_model.
-    me->model = io_model.
-  ENDMETHOD.
-
-  METHOD set_view.
-    me->view = io_view.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_44_CONTROL_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

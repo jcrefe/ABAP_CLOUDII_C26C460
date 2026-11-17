@@ -1,26 +1,13 @@
-CLASS zcl_jcrf_04_inherit_1_log_c460 DEFINITION
-  PUBLIC
-*  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_04_INHERIT_1_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    DATA: architecture TYPE string VALUE '64 bits'.
-
-    METHODS:
-      get_architecture
-        RETURNING VALUE(rv_architecture) TYPE string.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_04_inherit_1_log_c460 IMPLEMENTATION.
-
-  METHOD get_architecture.
-    rv_architecture = me->architecture.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_04_INHERIT_1_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

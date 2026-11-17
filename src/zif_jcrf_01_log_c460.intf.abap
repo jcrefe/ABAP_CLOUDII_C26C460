@@ -1,16 +1,4 @@
-INTERFACE zif_jcrf_01_log_c460
-  PUBLIC .
+interface ZIF_JCRF_01_LOG_C460
+  public .
 
-  INTERFACES: zif_jcrf_03_log_c460.
-
-  CLASS-DATA: comp_id TYPE string.
-
-  DATA: conn_id TYPE string.
-
-  METHODS:
-
-    set_conn_id IMPORTING iv_conn_id TYPE string,
-
-    get_conn_id RETURNING VALUE(rv_conn_id) TYPE string.
-
-ENDINTERFACE.
+endinterface.

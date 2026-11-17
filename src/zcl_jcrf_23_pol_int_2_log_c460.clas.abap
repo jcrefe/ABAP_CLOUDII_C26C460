@@ -1,19 +1,13 @@
-CLASS zcl_jcrf_23_pol_int_2_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_23_POL_INT_2_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES: zif_jcrf_04_log_c460.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_23_pol_int_2_log_c460 IMPLEMENTATION.
-  METHOD zif_jcrf_04_log_c460~define_company.
-    rv_company = 'Company USA....'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_23_POL_INT_2_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

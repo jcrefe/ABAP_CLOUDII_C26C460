@@ -1,21 +1,13 @@
-CLASS zcl_jcrf_11_widening_log_c460 DEFINITION INHERITING FROM zcl_jcrf_10_narrowing_log_c460
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_11_WIDENING_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      walk REDEFINITION.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_11_widening_log_c460 IMPLEMENTATION.
-  METHOD walk.
-    rv_walk = 'The lion walk'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_11_WIDENING_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

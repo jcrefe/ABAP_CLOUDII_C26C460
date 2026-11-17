@@ -1,30 +1,13 @@
-CLASS zcl_jcrf_36_loc_class_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_36_LOC_CLASS_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-
-
-    METHODS: my_meth.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-    DATA: ls_algo TYPE ty_first.
-*          ls_algo2 type ty_first2.
-
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_36_loc_class_log_c460 IMPLEMENTATION.
-  METHOD my_meth.
-
-    DATA(lo_local) = NEW lcl_helper(  ).
-
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_36_LOC_CLASS_LOG_C460 IMPLEMENTATION.
 ENDCLASS.
-
-

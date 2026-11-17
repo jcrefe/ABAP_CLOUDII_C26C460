@@ -1,25 +1,13 @@
-CLASS zcl_jcrf_14_child_fri_log_c460 DEFINITION INHERITING FROM zcl_jcrf_13_friends_log_c460
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_14_CHILD_FRI_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    METHODS: my_meth.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_14_child_fri_log_c460 IMPLEMENTATION.
-  METHOD my_meth.
-    me->father_attr = 'Child hello'.
-
-    DATA(lo_inst) = NEW zcl_jcrf_12_friends_log_c460(  ).
-
-    lo_inst->private_attr = 'child'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_14_CHILD_FRI_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

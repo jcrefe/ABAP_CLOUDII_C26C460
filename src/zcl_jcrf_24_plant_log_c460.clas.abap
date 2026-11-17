@@ -1,19 +1,13 @@
-CLASS zcl_jcrf_24_plant_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_24_PLANT_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      assign_company IMPORTING io_company      TYPE REF TO zif_jcrf_04_log_c460
-                     RETURNING VALUE(rv_plant) TYPE string.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_24_plant_log_c460 IMPLEMENTATION.
-  METHOD assign_company.
-    rv_plant = |Plant was assigned to ... { io_company->define_company( ) }|.
-  ENDMETHOD.
 
+
+CLASS ZCL_JCRF_24_PLANT_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

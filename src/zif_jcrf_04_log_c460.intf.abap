@@ -1,6 +1,4 @@
-INTERFACE zif_jcrf_04_log_c460
-  PUBLIC .
+interface ZIF_JCRF_04_LOG_C460
+  public .
 
-  METHODS: define_company RETURNING VALUE(rv_company) TYPE string.
-
-ENDINTERFACE.
+endinterface.

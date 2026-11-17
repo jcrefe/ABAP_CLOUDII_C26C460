@@ -1,27 +1,13 @@
-CLASS zcl_jcrf_lab_03_contract DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_LAB_03_CONTRACT definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA: cntr_type(2) TYPE c.
-
-    METHODS:
-      set_creation_date IMPORTING iv_creation_date    TYPE zdate.
-
-
-  PROTECTED SECTION.
-    DATA: creation_date TYPE zdate.
-
-  PRIVATE SECTION.
-    DATA: client TYPE string.
-
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_lab_03_contract IMPLEMENTATION.
-  METHOD set_creation_date.
-    creation_date = iv_creation_date.
-  ENDMETHOD.
 
 
+CLASS ZCL_JCRF_LAB_03_CONTRACT IMPLEMENTATION.
 ENDCLASS.

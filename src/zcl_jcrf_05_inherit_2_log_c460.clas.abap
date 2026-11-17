@@ -1,14 +1,13 @@
-CLASS zcl_jcrf_05_inherit_2_log_c460 DEFINITION INHERITING FROM zcl_jcrf_04_inherit_1_log_c460
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_05_INHERIT_2_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_05_inherit_2_log_c460 IMPLEMENTATION.
+CLASS ZCL_JCRF_05_INHERIT_2_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

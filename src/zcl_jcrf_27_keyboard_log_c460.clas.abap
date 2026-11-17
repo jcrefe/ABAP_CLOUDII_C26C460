@@ -1,15 +1,13 @@
-CLASS zcl_jcrf_27_keyboard_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_27_KEYBOARD_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA: keyboard_type TYPE string.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_27_keyboard_log_c460 IMPLEMENTATION.
+CLASS ZCL_JCRF_27_KEYBOARD_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

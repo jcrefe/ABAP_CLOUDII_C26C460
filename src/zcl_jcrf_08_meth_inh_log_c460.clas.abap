@@ -1,35 +1,13 @@
-CLASS zcl_jcrf_08_meth_inh_log_c460 DEFINITION
-  PUBLIC
-  CREATE PUBLIC .
+class ZCL_JCRF_08_METH_INH_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    TYPES: BEGIN OF ty_name,
-             name TYPE string,
-           END OF ty_name.
-
-    DATA: gt_name TYPE STANDARD TABLE OF ty_name.
-
-    METHODS:
-      set_name
-        IMPORTING
-          is_name TYPE ty_name,
-
-      set_meth FINAL.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_08_meth_inh_log_c460 IMPLEMENTATION.
-  METHOD set_name.
-    APPEND is_name TO gt_name.
-  ENDMETHOD.
-
-  METHOD set_meth.
-
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_08_METH_INH_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

@@ -1,32 +1,13 @@
-CLASS zcl_jcrf_41_factory_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_41_FACTORY_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      get_shape
-        IMPORTING iv_shape_type   TYPE string
-        RETURNING VALUE(ro_shape) TYPE REF TO zif_jcrf_06_log_c460.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_41_factory_log_c460 IMPLEMENTATION.
-
-  METHOD get_shape.
-
-    CASE iv_shape_type.
-      WHEN 'Circle'.
-        ro_shape = NEW zcl_jcrf_38_circle_log_c460(  ).
-      WHEN 'Triangle'.
-        ro_shape = NEW zcl_jcrf_39_triangle_log_c460(  ).
-      WHEN 'Square'.
-        ro_shape = NEW zcl_jcrf_40_square_log_c460(  ).
-    ENDCASE.
-
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_41_FACTORY_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

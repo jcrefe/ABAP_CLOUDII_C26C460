@@ -1,20 +1,13 @@
-CLASS zcl_jcrf_10_narrowing_log_c460 DEFINITION
-  PUBLIC
-  CREATE PUBLIC .
+class ZCL_JCRF_10_NARROWING_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      walk
-        RETURNING VALUE(rv_walk) TYPE string.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_10_narrowing_log_c460 IMPLEMENTATION.
-  METHOD walk.
-    rv_walk = 'The animal walk'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_10_NARROWING_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

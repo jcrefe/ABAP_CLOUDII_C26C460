@@ -1,20 +1,13 @@
-CLASS zcl_jcrf_20_cargo_pla_log_c460 DEFINITION
-  PUBLIC
-  INHERITING FROM zcl_jcrf_19_polymor_log_c460
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_20_CARGO_PLA_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS: airplane_type REDEFINITION.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_20_cargo_pla_log_c460 IMPLEMENTATION.
-  METHOD airplane_type.
-    rv_airplane_type = 'Cargo plane'.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_20_CARGO_PLA_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

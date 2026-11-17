@@ -1,26 +1,13 @@
-CLASS zcl_jcrf_lab_09_account DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_LAB_09_ACCOUNT definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      get_iban RETURNING VALUE(iban) TYPE string,
-
-      set_iban IMPORTING iban TYPE string.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-    DATA iban TYPE string.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_lab_09_account IMPLEMENTATION.
-  METHOD get_iban.
-    iban = me->iban.
-  ENDMETHOD.
 
-  METHOD set_iban.
-    me->iban = iban.
-  ENDMETHOD.
 
+CLASS ZCL_JCRF_LAB_09_ACCOUNT IMPLEMENTATION.
 ENDCLASS.

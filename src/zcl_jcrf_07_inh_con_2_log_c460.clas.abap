@@ -1,29 +1,13 @@
-CLASS zcl_jcrf_07_inh_con_2_log_c460 DEFINITION INHERITING FROM zcl_jcrf_06_inh_const_log_c460
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_07_INH_CON_2_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    METHODS:
-      constructor
-        IMPORTING
-          iv_view_type TYPE string
-          iv_box       TYPE string.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_07_inh_con_2_log_c460 IMPLEMENTATION.
-  METHOD constructor.
-
-    super->constructor( iv_view_type = iv_view_type ).
-
-    me->box = iv_box.
-
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_07_INH_CON_2_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

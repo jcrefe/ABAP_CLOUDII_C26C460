@@ -1,21 +1,13 @@
-CLASS zcl_jcrf_28_laptop_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_28_LAPTOP_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA: keyboard TYPE REF TO zcl_jcrf_27_keyboard_log_c460.
-
-    METHODS:
-      constructor IMPORTING io_keyboard TYPE REF TO zcl_jcrf_27_keyboard_log_c460.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_28_laptop_log_c460 IMPLEMENTATION.
-  METHOD constructor.
-    keyboard = io_keyboard.
-  ENDMETHOD.
 
+
+CLASS ZCL_JCRF_28_LAPTOP_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

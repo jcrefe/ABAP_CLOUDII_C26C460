@@ -1,22 +1,13 @@
-CLASS zcl_jcrf_30_product_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_30_PRODUCT_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      return_category RETURNING VALUE(rv_category) TYPE string.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-    DATA: category TYPE string VALUE 'AS'.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_30_product_log_c460 IMPLEMENTATION.
-  METHOD return_category.
-    rv_category = me->category.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_30_PRODUCT_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

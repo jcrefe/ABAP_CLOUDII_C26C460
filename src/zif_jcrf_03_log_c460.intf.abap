@@ -1,10 +1,4 @@
-INTERFACE zif_jcrf_03_log_c460
-  PUBLIC .
+interface ZIF_JCRF_03_LOG_C460
+  public .
 
-  METHODS:
-    get_airports
-      IMPORTING
-                iv_airport_id     TYPE string
-      RETURNING VALUE(rs_airport) TYPE /dmo/airport.
-
-ENDINTERFACE.
+endinterface.

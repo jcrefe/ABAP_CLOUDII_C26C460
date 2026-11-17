@@ -1,27 +1,13 @@
-CLASS zcl_jcrf_lab_04_person DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_LAB_04_PERSON definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      set_age IMPORTING iv_age    TYPE i,
-
-      get_age EXPORTING ev_age TYPE i.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-    DATA: age    TYPE i.
-
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_jcrf_lab_04_person IMPLEMENTATION.
-  METHOD set_age.
-    age = iv_age.
-  ENDMETHOD.
 
-  METHOD get_age.
-    ev_age = age.
-  ENDMETHOD.
 
+CLASS ZCL_JCRF_LAB_04_PERSON IMPLEMENTATION.
 ENDCLASS.

@@ -1,24 +1,13 @@
-CLASS zcl_jcrf_43_view_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_43_VIEW_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    METHODS:
-      display_employee IMPORTING iv_name TYPE string
-                                 iv_role TYPE string
-                                 io_out  TYPE REF TO if_oo_adt_classrun_out.
-
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_43_view_log_c460 IMPLEMENTATION.
-  METHOD display_employee.
-    io_out->write( |{ iv_name }---{ iv_role }| ).
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_43_VIEW_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

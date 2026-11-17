@@ -1,20 +1,13 @@
-CLASS zcl_jcrf_48_bill_dep_log_c460 DEFINITION INHERITING FROM zcl_jcrf_46_observer_log_c460
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_48_BILL_DEP_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    DATA: state TYPE string.
-    METHODS: on_modified_state REDEFINITION.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_48_bill_dep_log_c460 IMPLEMENTATION.
-  METHOD on_modified_state.
-    me->state = ev_new_state.
-  ENDMETHOD.
-
+CLASS ZCL_JCRF_48_BILL_DEP_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

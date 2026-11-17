@@ -1,21 +1,13 @@
-CLASS zcl_jcrf_38_circle_log_c460 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_38_CIRCLE_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    INTERFACES zif_jcrf_06_log_c460 .
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_38_circle_log_c460 IMPLEMENTATION.
-
-
-  METHOD zif_jcrf_06_log_c460~draw_shape.
-    rv_shape = 'Circle'.
-  ENDMETHOD.
+CLASS ZCL_JCRF_38_CIRCLE_LOG_C460 IMPLEMENTATION.
 ENDCLASS.

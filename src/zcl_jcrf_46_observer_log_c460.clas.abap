@@ -1,20 +1,13 @@
-CLASS zcl_jcrf_46_observer_log_c460 DEFINITION ABSTRACT
-  PUBLIC
-  "FINAL
-  CREATE PUBLIC .
+class ZCL_JCRF_46_OBSERVER_LOG_C460 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    METHODS:
-      on_modified_state ABSTRACT
-        FOR EVENT modified_state OF zcl_jcrf_45_processes_log_c460
-        IMPORTING ev_new_state.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_jcrf_46_observer_log_c460 IMPLEMENTATION.
+CLASS ZCL_JCRF_46_OBSERVER_LOG_C460 IMPLEMENTATION.
 ENDCLASS.
